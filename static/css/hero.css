@@ -1,0 +1,96 @@
+/* hero greeting background */
+
+#hero-image {
+    position: relative;
+    height: 100vh;
+    background-color: #0c0b0b;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    z-index: 100;
+  }
+  
+  #hero-image.loaded * {
+    opacity: 1;
+    filter: blur(0px);
+    letter-spacing: 0.2em;
+    -webkit-transform: translateZ(1);
+    -moz-transform: translateZ(1);
+    transform: translateZ(1);
+  }
+  
+  #hero-image.loaded .hero-background {
+    -webkit-transform: translateZ(1.1);
+    -moz-transform: translateZ(1.1);
+    transform: translateZ(1.1);
+    
+  }
+  
+  .hero-background {
+    position: relative;
+    /* object-fit: cover; */
+    /* background-position: center center; */
+    transition: all 3s;
+    opacity: 1;
+    filter: blur(32px) contrast(120%) saturate(100%);
+    -webkit-transform: translateZ(1);
+    -moz-transform: translateZ(1);
+    transform: translateZ(1);
+  }
+  
+  .site-logo {
+    top: 40vh;
+    font: 100 4em/1em raleway, arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 50;
+    margin-top: -0.5em;
+    margin-bottom: 0.2em;
+    -webkit-transform: translateZ(1);
+    -moz-transform: translateZ(1);
+    transform: translateZ(1);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    transition: all 3s;
+    filter: blur(5.33333333px);
+    float: right;
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    color: whitesmoke;
+  }
+  
+  .site-logo-two {
+    top: 41vh;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 50;
+    margin-top: -0.5em;
+    -webkit-transform: translateZ(1);
+    -moz-transform: translateZ(1);
+    transform: translateZ(1);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    transition: all 4s;
+    filter: blur(5.33333333px);
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    padding-top: 35px;
+    color: white;
+  }
+  
+  .site-logo strong {
+    font-weight: 300;
+    letter-spacing: inherit;
+    transition: all 3s;
+  }
+
+  .hero-img {
+    position: relative;
+    top: 15vh;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-width: 100vh;
+  }

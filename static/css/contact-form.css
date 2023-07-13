@@ -1,0 +1,90 @@
+.contact {
+	border: aliceblue;
+	color: white;
+	position: relative;
+	bottom: 1em;
+}
+
+/* CSS */
+.button-53 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:hover {
+  background-color: rgba(102, 177, 241, 0.8);
+  box-shadow: rgba(102, 177, 241, 0.8) 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-53:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-53 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+.jump-top {
+	background:transparent;
+	text-align:center;
+	font-size:180%;
+	margin:2em;
+	font-family: Calibri, arial, sans-serif;
+  top: 10em
+}
+.jump-top{
+	color:black;
+	padding-top:1.8em;
+	display:inline-block;/* or block */
+	position:relative;
+	border-color:black;
+	text-decoration:none;
+	transition:all .3s ease-out;
+}
+.jump-top:before{
+	content:'▲';
+	font-size:.9em;
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-.7em;
+	border:solid .13em black;
+	border-radius:10em;
+	width:1.4em;
+	height:1.4em;
+	line-height:1.3em;
+	border-color:inherit;
+	transition:transform .5s ease-in;
+}
+.jump-top:hover{
+	color:black;
+	border-color:black;
+}
+.jump-top:hover:before{
+	transform: rotate(360deg);
+}

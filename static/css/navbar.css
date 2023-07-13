@@ -1,0 +1,90 @@
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.et-hero-tabs h1,
+.et-slide h1 {
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+.et-hero-tabs h3,
+.et-slide h3 {
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.6;
+}
+
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #383636;
+  z-index: 1000;
+  text-transform: uppercase;
+}
+
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
+}
+
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  --b: 0.4em;   /* the thickness of the line */
+  --c: #e6f6fc; /* the color */
+  
+  color: #e6f6fc;
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%,#baf1ff 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  z-index: 5000;
+}
+
+.et-hero-tab:hover { 
+  --_p: 100%;
+  --_s: .3s;
+}
+
+.et-hero-tab-slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #66B1F1;
+  transition: left 0.3s ease;
+}
+
+@media (min-width: 800px) {
+  .et-hero-tabs h1,
+.et-slide h1 {
+    font-size: 3rem;
+  }
+  .et-hero-tabs h3,
+.et-slide h3 {
+    font-size: 1.2rem;
+  }
+
+  .et-hero-tab {
+    font-size: 1.4rem;
+  }
+}

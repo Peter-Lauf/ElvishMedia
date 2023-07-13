@@ -1,0 +1,205 @@
+{%load static%}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script>Dropzone.autoDiscover = false;</script>
+    <script src="https://kit.fontawesome.com/5f7854fe99.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/videos.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/hero.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/socialmediabuttons.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/contact-form.css' %}"/>
+    
+  </head>
+  <body>
+    <section class="et-hero-tabs" id="hero-image">
+      <div class="hero-background">
+        <img class="hero-img" src="{% static 'images/herobg2.jpg' %}" alt="hero background"/>
+      </div>
+      <h1 class="site-logo"><strong>Elvish Media</strong></h1>
+      <span class="site-logo-two">Camera & Drone photography</span>
+      <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#convert-media">What We Do</a>
+        <a class="et-hero-tab" href="#about">About</a>
+        <a class="et-hero-tab" href="#other-projects">Other Projects</a>
+        <a class="et-hero-tab" href="#something-else">Something else</a>
+        <a class="et-hero-tab" href="#the-end">Contact</a>
+        <span class="et-hero-tab-slider"></span>
+      </div>
+    </section>
+    <main class="et-main">
+      <section class="et-slide" id="convert-media">
+        <div class="homepage_wrapper">
+          <p class="greeting">Let's get your pixels pushed in! <img class="greeting_img" src="../../static/images/banana.gif"></p>
+          <div class="uldl-wrapper">
+            <div class="file-drop-area">             
+              <button id="remove_btn" class="clear_dz" type="button" style=" color: white;">X</button>
+              <form class="dropzone" id="uploadfile" method="post" enctype="multipart/form-data">   
+                <img id="upload_image" class="upload_img" src="../../static/images/uploadlogo.png">
+                {% csrf_token %}
+              </form>
+              <div class="alert hide">
+                <span class="fas fa-exclamation-circle"></span>
+                <span class="msg"></span>
+                <span class="close-btn">
+                  <span class="fas fa-times"></span>
+                </span>
+              </div>
+              <div class="output_format">         
+                <div class="select">
+                  <div id="error"></div>
+                    <select name="output_format" id="output_format">
+                      <option id="conversion-format" selected diabled>Choose conversion format</option>
+                      <option value=".webm">.webm</option>
+                      <option value=".mkv">.mkv</option>
+                      <option value=".flv">.flv</option>
+                      <option value=".vob">.vob</option>
+                      <option value=".gif">.gif</option>
+                      <option value=".avi">.avi</option>
+                      <option value=".mov">.mov</option>
+                      <option value=".wmv">.wmv</option>
+                      <option value=".mp4">.mp4</option>
+                      <option value=".mpg">.mpg</option>
+                      <option value=".mpeg">.mpeg</option>
+                      <option value=".3gp">.3gp</option>
+                  </select>
+                </div>
+              </div>
+              <button id="submitul">Submit</button>
+                <div class='loading-spinner' id='loading-spinner'>
+                  <div class='circle'>
+                    <div class='inner'></div>
+                  </div>
+                  <div class='circle'>
+                    <div class='inner'></div>
+                  </div>
+                  <div class='circle'>
+                    <div class='inner'></div>
+                  </div>
+                  <div class='circle'>
+                    <div class='inner'></div>
+                  </div>
+                  <div class='circle'>
+                    <div class='inner'></div>
+                  </div>
+                </div>
+              <button class="button" id="download-btn"><i class='fa-solid fa-download'></i>Download
+                <div class="progress-wrapper">
+                  <div class="progress-inner"></div>
+                  <div class="checkmark">
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="circle-download">
+                    <div class="bar left">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="bar right">
+                      <div class="progress"></div>
+                    </div>
+                </div>
+              </button>
+          </div>
+          <div class="socialw fadeInDown">
+            <a href="https://facebook.com/" target="_blank">		
+              <div class="social first"><img src="https://i.imgur.com/PY2EPRW.png"/></div>
+            </a>
+            <a href="https://twitter.com/" target="_blank">		
+              <div class="social"> <img src="https://i.imgur.com/ny0pyqt.png"/> </div>
+            </a>
+            <a href="http://instagram.com/" target="_blank">		
+              <div class="social"> <img src="https://i.imgur.com/tZZG2zQ.png"/></div>
+            </a>
+          </div>
+        </div>
+      <div class="video-container">
+        <div class="video-row">
+          <div class="col-10 mx-auto mt-5 text-center">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+      </div>
+      </section>
+      <section class="et-slide" id="about">
+        <div class="page-about">
+          <div class="left-side">
+            <h1>About our Project</h1>
+            <h2 class="just-why">Elvishmedia... Just why?!</h2>
+            <p> Because people got tired of their media files playing hard-to-get in the format they need! But they shall fear not, 
+              our media converting site is here to rescue them from the clutches of format incompatibility!
+                <br>Click the "more info button" for... well for more info.</p>
+            <button id="about-button" class="trigger">Info</button>
+          </div>
+          <div class="profile-photo">
+          </div>
+          <div class="right-side-info">
+            <p>Once upon a time, in a far-off land of magic and wonder,
+               there were four IT students named Peter, Rihhard, Siim, and Chris.
+                They were tasked with creating a group project. They pondered and pondered what it may be,
+                when Crhis drew his sword, pointed it to the sky and cried "MEDIAAA CONVERTEEEER".
+                They then all knew what they must do. Create a website that could convert media files from one format to another.
+                They knew that this was no ordinary task, as they would need to use their magical abilities 
+                to create a website that could convert even the most complex of media files.
+              
+              Rihhard was a powerful wizard, who could manipulate code with his spells. Chris was a cunning warlock, 
+              who could use his dark magic to create powerful algorithms. Peter was a wise sorcerer, who could tap into 
+              the knowledge of the ancient ones to create new front-end designs. 
+              Siim was a brave knight, who could defend the website from the attacks.
+              
+              Together, they began their work. They created a magical portal that could access the media files from any corner of the land.
+               They then used their powers to create a powerful converting logic that could turn any media file into any format*. </p>
+        
+            <p>But their work was not without its challenges. As they worked, dark creatures known as the "Pro Crestinateurs" 
+              began to attack their website, trying to corrupt their codes and destroy their work. For evil cannot create,
+              it can only corrupt.
+
+              The four IT students fought bravely against the Pro Crestinateurs, using their magical powers to create their website. 
+              They battled for days, and even when it seemed as if all was lost, they never gave up. </p>
+        
+            <p>Finally, after a long and grueling battle, the Pro Crestinateurs were defeated. 
+              Their website was safe once again, and they had successfully created the 
+              most powerful media converting website in all the land. </p>
+        
+            <p>Word of their incredible work spread throughout the kingdom, and soon people from all corners of the 
+              land came to use their website. It became so popular that even the rulers of the kingdom of Goggol came to ask for their help.
+
+              And so, the four IT students became known as the "Magical Media Wizards". They had not only completed their task, 
+              but had become heroes in their own right, using their magical abilities to help the people of the land. </p>
+          </div>
+        </div>
+      </section>
+      <section class="et-slide" id="other-projects">
+        <h1>Other Projects</h1>
+        <h3>something about our other projects</h3>
+      </section>
+      <section class="et-slide" id="something-else">
+        <h1>something else</h1>
+        <h3>something about something else</h3>
+      </section>
+      <section class="et-slide" id="the-end">
+      <div class="contact">
+        <button class="button-53" onclick="location.href='https://mail.google.com/mail/u/0/?fs=1&to=elvishmedia@elvishmedia.elvishmedia&tf=cm'">Get in touch with us!</button>
+      </div>
+        <a class="jump-top" href="#hero-image">To top</a>
+      </section>
+    </main>
+  </body> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
+  <script type="module" src="{% static 'js/main.js' %}"></script>
+  <script> 
+  jQuery(document).ready(function($){
+    jQuery.noConflict();
+    $('#hero-image').imagesLoaded( { background: true }, function(instance) {
+      $('#hero-image').addClass('loaded');
+    })}) </script>
+  <script type="module" src="{% static 'js/navbar.js' %}"></script>
+</html>
